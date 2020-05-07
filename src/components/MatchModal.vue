@@ -6,7 +6,7 @@
 
           <div class="modal-header">
             <slot name="header">
-              <h3>{{ betsStatus ? "SUCCESS" : "FAILURE" }}</h3>
+              <h3>{{ betsStatus ? 'SUCCESS' : 'FAILURE' }}</h3>
             </slot>
           </div>
 
@@ -33,12 +33,16 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
+  import { GET_WEATHER } from '../store/actions';
   export default {
     name: 'MatchModal',
     computed: mapGetters(['betsStatus', 'bets', 'weather']),
+    methods: {
+      ...mapActions([GET_WEATHER])
+    },
     mounted() {
-      this.$store.dispatch('GET_WEATHER')
+      this[GET_WEATHER]()
     }
   }
 </script>

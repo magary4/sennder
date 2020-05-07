@@ -1,0 +1,3 @@
+export const EMPLOYER_BET = 'EMPLOYER_BET'
+export const EMPLOYEE_BET = 'EMPLOYEE_BET'
+export const GET_WEATHER = 'GET_WEATHER'

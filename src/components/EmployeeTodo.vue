@@ -7,13 +7,14 @@
 
 <script>
   import TodoMixing from '../mixings/todoMixing'
+  import { mapActions } from 'vuex';
+  import { EMPLOYEE_BET } from '../store/actions';
+
   export default {
     name: 'EmployeeTodo',
     mixins: [ TodoMixing ],
     methods: {
-      makeBet(amount) {
-        this.$store.dispatch('EMPLOYEE_BET', amount)
-      }
+      ...mapActions({makeBet: EMPLOYEE_BET})
     }
   }
 </script>
