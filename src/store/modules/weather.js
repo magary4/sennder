@@ -17,9 +17,9 @@ const mutations = {
 }
 
 const actions = {
-  async [GET_WEATHER](context) {
-    const weatherObj = await api().getWeatherForTown()
-    if (null !== weatherObj && Object.keys(weatherObj).length) {
+  async [GET_WEATHER](context, town) {
+    const weatherObj = await api().getWeatherForTown(town)
+    if (weatherObj && Object.keys(weatherObj).length) {
       context.commit('SET_WEATHER', weatherObj)
     } else {
       console.log('No weather data')

@@ -16,7 +16,8 @@ export default () => {
         return response.data;
       })
       .catch(err => {
-        throw err;
+        // TODO: error handler
+        console.log(err)
       });
   }
 
