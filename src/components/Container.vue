@@ -1,9 +1,9 @@
 <template>
   <div>
     <div>
-      <a href="#" class="employer-link" v-bind:class="{active: TAB_EMPLOYER === tabIndex}" @click="toggleTab(0)" >Employer-Todo</a>
+      <a href="#" class="employer-link" v-bind:class="{active: TAB_EMPLOYER === tabIndex}" @click="toggleTab(TAB_EMPLOYER)" >Employer-Todo</a>
       &nbsp;&nbsp;&nbsp;
-      <a href="#" class="employee-link" v-bind:class="{active: TAB_EMPLOYEE === tabIndex}" @click="toggleTab(1)" >Employee-Todo</a>
+      <a href="#" class="employee-link" v-bind:class="{active: TAB_EMPLOYEE === tabIndex}" @click="toggleTab(TAB_EMPLOYEE)" >Employee-Todo</a>
     </div>
     <br/><br/><br/>
     <div>
@@ -35,7 +35,7 @@
         showMatchModal: false
       }
     },
-    computed: mapGetters(['betsMade', 'betsStatus', 'bets']),
+    computed: mapGetters(['betsMade']),
     watch: {
       betsMade() { this.showMatchModal = true }
     },
