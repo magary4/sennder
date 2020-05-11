@@ -8,7 +8,7 @@ const state = () => ({
 
 const getters = {
   betsMade: (state) => null !== state.employerBet && null !== state.employeeBet,
-  betsStatus: (state) => state.employerBet > state.employeeBet,
+  betsStatus: (state) => null !== state.employerBet && null !== state.employeeBet && state.employerBet >= state.employeeBet,
   bets: (state) => ({
     employer: state.employerBet,
     employee: state.employeeBet
